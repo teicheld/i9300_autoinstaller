@@ -16,4 +16,4 @@ https://f-droid.org/en/packages/org.freenetproject.mobile/
 https://f-droid.org/en/packages/com.lightning.walletapp/
 https://f-droid.org/en/packages/app.zeusln.zeus/
 https://f-droid.org/en/packages/org.sufficientlysecure.localcalendar/
-
+https://f-droid.org/en/packages/com.termux/
