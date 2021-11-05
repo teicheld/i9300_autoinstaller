@@ -7,6 +7,7 @@ function get_f-droid {
 		echo taking local version of $package
 	else
 		newest_apk=$(curl https://f-droid.org/en/packages/${package}/ | grep ${package}.*apk | awk NR==1 | grep --only-matching f-droid.*apk)
+		echo "downloading neweste version of $package."
 		wget -nv $newest_apk
 	fi
 }
@@ -52,7 +53,7 @@ function remove_obsolete_apps {
 	adb shell pm uninstall --user 0 com.android.camera2 #replaced by openCamera
 	adb shell pm uninstall --user 0 org.lineageos.eleven #replaced through vlc to play youtube-dl's audio extracts
 	echo removing all messy folders
-	adb shell rm -r /sdcard/*
+	adb shell find /sdcard -empty -delete
 	adb shell mkdir /sdcard/Music/
 	adb shell mkdir /sdcard/DCIM/
 	adb shell mkdir /sdcard/Documents/
